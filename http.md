@@ -5,7 +5,7 @@ HTTP is central to how modern web applications work and how they're built.
 ## Brief Overview and History
 
 * Under your browser's hood lies a collection of files -- CSS, HTML, Javascript, videos, images, etc. -- that makes displaying the page possible. All these files were sent from a server to your browser, the client, by an application protocol called HTTP.
-    * HTTP follows a simple model where a client makes a request to a server and waits for a response - a request-response protocol
+    * HTTP follows a simple model where a client makes a request to a server and waits for a response - a request-response protocol. HTTP is effectively a system of rules with which clients and servers must comply if they wish to communicate over them.
 * HTTP was invented by Tim Berners-Lee in the 1980s
 
 ## How the Internet Works
@@ -30,3 +30,16 @@ HTTP is central to how modern web applications work and how they're built.
 ## What is a URL?
 * Uniform Resource Locator (URL) is akin to the address or phone number one needs in order to visit or communicate with a friend.
 * A URL is the most frequently used part of a general concept of a Uniform Resource Identifier (URI), which specifies how resources are located.
+### URL Components
+* A URL is comprised of several components. Take http://www.example.com:88/home?item=book as an example:
+    1. http: The scheme. It always comes before the colon and two forward slashes and tells the web client how to access the resource. In this case it tells the web client to use the Hypertext Transfer Protocol or HTTP to make a request. Other popular URL schemes are ftp, mailto or git. You may sometimes see this part of the URL referred to as the protocol, and there is a connection between the two things in that the scheme can indicate which protocol (or system of rules) should be used to access the resource; in the context of of a URL however, the correct term for this component is the scheme.
+
+    2. www.example.com: The host. It tells the client where the resource is hosted or located.
+
+    3. :88 : The port or port number. It is only required if you want to use a port other than the default.
+
+    4. /home/: The path. It shows what local resource is being requested. This part of the URL is optional.
+
+    5. ?item=book : The query string, which is made up of query parameters. It is used to send data to the server. This part of the URL is also optional.
+
+
