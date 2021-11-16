@@ -21,3 +21,12 @@ HTTP is central to how modern web applications work and how they're built.
     4. The packaged-up HTTP request then goes over the Internet where it is directed to the server with the matching IP address.
     5. The remote server accepts the request and sends a response over the Internet back to your network interface which hands it to your browser.
     6. Finally, the browser displays the response in the form of a web page.
+* Clients and servers - The most common client is an application you interact with on a daily basis, e.g., a web browser (mobile or desktop). Clients are responsible for issuing HTTP requests and processing the HTTP response in a user-friendly manner onto your screen. Servers, on the other hand, store the content you're requesting and are capable of handling inbound requests, and their job is to issue a response back. Often, the response will content relevant data as specified in the request.
+* Resources - A generic term for things you interact with on the Internet via a URL. This may include images, videos, web pages, and other files. In fact, resources can also take the form of software that lets you trade stock or play a video game.
+* Statelessness - A protocol is said to be stateless if it's designed in such a way that each request/response pair is completely independent of the previous one. In the context of HTTP, this means that the server does not need to hang on to information, or state, between requests.
+    * Since HTTP is inherently stateless, web developers have to work hard to simulate a stateful experience in web applications.
+    * Statelessness is what HTTP so resilient, distributed, and hard to control. It's also what makes it so difficult to secure and build on top of.
+
+## What is a URL?
+* Uniform Resource Locator (URL) is akin to the address or phone number one needs in order to visit or communicate with a friend.
+* A URL is the most frequently used part of a general concept of a Uniform Resource Identifier (URI), which specifies how resources are located.
