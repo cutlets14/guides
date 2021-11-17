@@ -62,3 +62,13 @@ Given a simple URL with a query string - http://www.example.com?search=ruby&resu
     * Space and special characters cannot be used with query strings. They must be URL encoded.
 
 ### URL Encoding
+URLs are designed to accept only certain characters in the standard 128-character ASCII character set. Characters not in this set have to be encoded so that they are used safely. URL encoding serves this purpose of replacing these non-conforming characters with a % symbol followed by two hexadecimal digits that represent the ASCII code of the character. Only alphanumeric and special characters $-_.+!'()", and reserved characters when used for their reserved purposes can be used unencoded.
+
+* Characters must be encoded if:
+    * They have no corresponding character within the standard ASCII character set
+    * The use of the character is unsafe because it may be misinterpreted or modified by some systems
+    * The character is reserved for special use e.g., /, ?, @, &
+
+## Tools
+
+
