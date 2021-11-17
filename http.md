@@ -42,4 +42,23 @@ HTTP is central to how modern web applications work and how they're built.
 
     5. ?item=book : The query string, which is made up of query parameters. It is used to send data to the server. This part of the URL is also optional.
 
+* Somtimes, the URL may point to a specific resource on the host e.g., http://www.example.com/home/index.html
 
+* Unless otherwise noted, the default port number of HTTP requests is 80.
+
+### Query Strings/Parameters
+Given a simple URL with a query string - http://www.example.com?search=ruby&results=10
+
+| Query String Component| Description|
+|-----------------------|------------|
+| ?                     | A reserved character that marks the start of the query string|
+| search=ruby           | A parameter name/value pair  |
+| &                     | A reserved character used when adding more parameters to the query string  |
+| results=10            | A parameter name/value pair  |
+
+* Although query strings are great to pass in additional information to the server, there are some limits to their usage:
+    * Query strings have a maximum length
+    * Name/value pairs used in query strings are visible in the URL and thus, passing sensitive information to the server in this manner is not recommended
+    * Space and special characters cannot be used with query strings. They must be URL encoded.
+
+### URL Encoding
