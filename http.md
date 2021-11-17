@@ -70,5 +70,11 @@ URLs are designed to accept only certain characters in the standard 128-characte
     * The character is reserved for special use e.g., /, ?, @, &
 
 ## Tools
+### GUI Tools
+1. Paw 3 - Paid
+2. Insomnia - Free
+3. Postman - Free
 
+### Command Line Tools
+1. CURL - Free; pre-installed with macOS
 
