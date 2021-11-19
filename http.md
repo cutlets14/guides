@@ -78,3 +78,11 @@ URLs are designed to accept only certain characters in the standard 128-characte
 ### Command Line Tools
 1. CURL - Free; pre-installed with macOS
 
+## Request Methods
+* When using a browser's Inspector, information displayed in the "Method" column is known as the "HTTP Request Method". You can think of this as the verb that tells the server which action to perform on a resource.
+    * The two most common HTTP request methods are GET and POST. When thinking about retrieving information, think GET, which is the most used HTTP request method.
+    * The "Status" column shows the response status for each request. Unless there's a time-out, every request gets a response, even if the response is an error.
+
+### GET Requests
+* GET requests are used to retrieve a resource, and most links are GETs. In fact, your browser issues a GET request when a URL is entered in the address bar. The default behavior of a link is to issue a GET request.
+* The response from a GET request can be anything, but if it's HTML and that HTML references other resources, your browser will automatically request those referenced resources. A pure HTTP tool will not.
