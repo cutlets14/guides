@@ -86,3 +86,5 @@ URLs are designed to accept only certain characters in the standard 128-characte
 ### GET Requests
 * GET requests are used to retrieve a resource, and most links are GETs. In fact, your browser issues a GET request when a URL is entered in the address bar. The default behavior of a link is to issue a GET request.
 * The response from a GET request can be anything, but if it's HTML and that HTML references other resources, your browser will automatically request those referenced resources. A pure HTTP tool will not.
+
+### POST Requests
