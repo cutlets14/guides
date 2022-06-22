@@ -39,6 +39,34 @@ The goal is to write software with the lowest cost per feature (i.e., well-desig
   - Usable - Existing code should be usable in new and unexpected contexts
   - Exemplary - The code itself should encourage those who change it to perpetuate
   these qualities
+- Looking for nouns that represent objects in the domain is a good way to identify potential classes. This, alone, isn't enough - you will need to ensure that a noun has both data and behavior associated with it to qualify as a class.
+
+## Determining if a class has a single responsibility
+1. Pretend that the class is sentient and interrogate it.
+2. Describe the class in a single sentence.
+   1. If the sentence contains "and", the class likely has more than one responsibility.
+   2. If the sentence contains "or", the class has more than one responsibility and they aren't even very related.
+3. When everything in a class is related to its central purpose, the class is said to be highly-cohesive or to have a single responsibility. Said differently, the class is cohesive when everything the class does is highly related to its purpose.
+
+## When to make the decision?
+- When the future cost of doing nothing is the same as the current cost, postpone the decision. Make the decision only when you must with the information you have at the time.
+
+## Writing code that embraces change
+1. Depend on behavior, not data.
+   1. Follow D.R.Y. - every tiny bit of behavior lives in one and only one place.
+   2. Hide instance variables - always hide instance variables by wrapping them in accessor methods instead of directly referring to them even from the class that defines them. Use `attr_reader` as a quick way to create wrapping/encapsulating methods for instance variables.
+   3. Hide data structures - never depend on a complex data structure and try your best to avoid leaky references. References to data structures are not DRY and such knowledge should be limited to one place. Use the Ruby `Struct` class to wrap a structure which trades indexing into a structure for sending messages to an object. Usage of `Structs` allows one to isolate messy structural information and DRYs out the code making the class far more tolerant of change. At all times, try to hide the mess even from yourself.
+2. Enforce Single Responsibility everywhere
+   1. Extract extra responsibilities from methods - Methods, like classes, should have a single responsibility - for all of the same reasons. ** You do not have to know where you're going to use good design practices to get there. Good practices reveeal design.**
+   2. Methods that have a single responsibility confer the following benefits:
+      1. Expose previously hidden qualities - Refactoring a class so that all of its methods have an SR has a clarifying effect on the class - even if you do not intend to reorganize the methods into other classes today.
+      2. Avoid the need for comments - if a bit of code inside a method needs a comment, extract that bit into a separate method. The new method name serves the same purpose as did the old comment.
+      3. Encourage reuse - other programmers will reuse the methods instead of duplicating the code. They will follow the pattern you have established and create small, reusable methods in turn.
+      4. Are easy to move to another class - small methods are easy to move because rearrangement is much easier without the need for a lot of method extraction and refactoring.
+   3. Isolate extra responsibilities in Classes - preserve your ability to make a decision later
+      1. Use the same pattern as hiding data structures by leveraging a `Struct` with a `do/end` block enclosing the method of interest.
+      2. If you have a muddled class with too many responsibilities, separate those responsibility into different classes. Concentrate on the primary class.
+      3. If you cannot remove extraneous responsibilities, isolate them and ensure that they don't leak into the class. Isolating them allows them to be extracted easily if the domain is clarified in the future.
   
 
 
