@@ -49,12 +49,20 @@
     - The caveat here is that the retrieving party must be confident that the public key belongs to the other one. There are two methods to achieving this confidence:
       - The retrieving party trusts the repository from which the public key has been retrieved.
       - The retrieving party finds a way to trust the repository, usually via a public-key certificate. This means that the information provided by the repository must be independently verifiable.
-  - Digital signature - 
+  - Digital signature - analogous to a handwritten signature because a single entity can sign some data, but any number of entities can read the signature and verify its accuracy.
+    - There must be a private key known only to Alice so that when she signs some data, the data is uniquely and explicitly tied to her. Furthermore, a public key must be available to a wider group of entities (potentially all entities) so that the signature can be verified and identified with Alice.
+    - Since it is computationally infeasible to forge a private key, it is impossible to forge the digital signature as well.
+    - A digital signature provides both data origin authentication (evidence about who originated the data) and data integrity (evidence that the data has not been altered in any way)
+  - Key establishment - Public-key cryptography can also be used to perform key exchange between two entities:
+    - Key transfer - One entity can encrypt a symmetric key using another entity's public key
+    - Key agreement - Both entities jointly-contribute to the genereation of the symmetric key
 - Encryption of data in ASC
   - Computations used for data encryption via ASC are too slow and thus impractical for many environments. Instead, the preferred route is a two-step process:
     - The data is encrypted using a randomly-generated symmetric key
     - The symmetric key is then encrypted using the public key
-  - The steps required to decrypt are two-fold as well: one to decrypt the symmetric key using the private key and the other to decrypt the ciphertext using the decrypted symmetric key
+  - The steps required to decrypt are two-fold as well: one to decrypt the symmetric key using the private key and the other to decrypt the ciphertext using the decrypted symmetric key.
+- Public key algorithms
+  - 
 
 
 
