@@ -38,5 +38,23 @@
 - Drawback with this approach is that the KDC becomes a single point of failure, must have 100% uptime, and may become a bottleneck for communication
 
 #### Public key aka asymmetric cryptography (ASC)
+- Two researchers - Diffie and Hellman - introduced the idea of ciphers which were asymmetric in which the key for encryption and the key for decryption are related but conspicuously different.
+- The keys in the key pair (public and private key) are different, but they are also related.
+  - One (public) is used for encryption of plaintext whereas the other (private) is used decryption of ciphertext.
+- The relationship between the keys in the key pair is mathematical in nature and may rely on information known only to the creator of the key pair.
+  - Security in this technology is such that it is computationally infeasible for anyone other than the key pair creator to derive the private key from knowledge of the public key.
+    - Theoretically, this doesn't mean that derivation of the private key is impossible. However, the amount of time, memory, or computing power necessary to do so in practice must be prohibitively high.
+- Many of the drawbacks of SC can now be addressed:
+  - Security between strangers - the public key can be shared widely amongst strangers given the difficulty of computing the private key even if all other details of the cipher are known. Thus, even if two parties are unknown to each other, one can look up the public key of the other and protect data from the other.
+    - The caveat here is that the retrieving party must be confident that the public key belongs to the other one. There are two methods to achieving this confidence:
+      - The retrieving party trusts the repository from which the public key has been retrieved.
+      - The retrieving party finds a way to trust the repository, usually via a public-key certificate. This means that the information provided by the repository must be independently verifiable.
+  - Digital signature - 
+- Encryption of data in ASC
+  - Computations used for data encryption via ASC are too slow and thus impractical for many environments. Instead, the preferred route is a two-step process:
+    - The data is encrypted using a randomly-generated symmetric key
+    - The symmetric key is then encrypted using the public key
+  - The steps required to decrypt are two-fold as well: one to decrypt the symmetric key using the private key and the other to decrypt the ciphertext using the decrypted symmetric key
+
 
 
