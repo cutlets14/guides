@@ -56,13 +56,22 @@
   - Key establishment - Public-key cryptography can also be used to perform key exchange between two entities:
     - Key transfer - One entity can encrypt a symmetric key using another entity's public key
     - Key agreement - Both entities jointly-contribute to the genereation of the symmetric key
+  - Signing also achieves non-repudiation.
 - Encryption of data in ASC
   - Computations used for data encryption via ASC are too slow and thus impractical for many environments. Instead, the preferred route is a two-step process:
     - The data is encrypted using a randomly-generated symmetric key
     - The symmetric key is then encrypted using the public key
   - The steps required to decrypt are two-fold as well: one to decrypt the symmetric key using the private key and the other to decrypt the ciphertext using the decrypted symmetric key.
-- Public key algorithms
-  - 
+- Public key algorithms, their uses, and minimum length for adequate security
+  - RSA - encryption/decryption, signing/verification, and key establishment; at least 1024-bits long
+  - DSA - from a family of algorithms with this one used exclusively for signing/verification; at least 1024-bits long
+  - DH - exclusively key establishment; at least 1024-bits long
+  - ECDSA and ECDH - counterparts to DSA and DH algos but differ in terms of mathematical problem that needs to be solved; at least 192-bits long
+  - SHA-1 - digital signatures; ; at least 160-bits long
+
+#### Difference between encryption and signing
+- Encryption - You use their public key to write a message and they use their private key to read it.
+- Signing - You use your private key to write the message's signature and they use your public key to check if it's really yours.
 
 
 
